@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=3 uid="uid://du2g2qnoameu4"]
+
+[ext_resource type="Script" path="res://Cenas/pause_menu.gd" id="1_bm766"]
+
+[node name="Pause_Menu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_bm766")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.75
+anchor_top = 0.75
+anchor_right = 0.75
+anchor_bottom = 0.75
+offset_left = -171.0
+offset_top = -222.0
+offset_right = -54.0
+offset_bottom = -121.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+
+[node name="quit_bt" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+text = "SAIR DO JOGO"
+
+[node name="reiniciar_bt" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "REINICIAR"
+
+[node name="voltar_bt" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "VOLTAR"
+
+[connection signal="pressed" from="VBoxContainer/quit_bt" to="." method="_on_quit_bt_pressed"]
+[connection signal="pressed" from="VBoxContainer/reiniciar_bt" to="." method="_on_reiniciar_bt_pressed"]
+[connection signal="pressed" from="VBoxContainer/voltar_bt" to="." method="_on_voltar_bt_pressed"]
